@@ -1,0 +1,72 @@
+@use './mixins.scss' as mixins;
+
+.gamecard {
+    cursor: pointer;
+    width:380px;
+    border-radius: 15px;
+    overflow: hidden;
+    position: absolute;
+    left:50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: column;
+    font-family: Poppins;
+
+    .img {
+        background-position: center;
+        background-size: 150%;
+        height:200px;
+        width:100%;
+    }
+
+    .info {
+        background-color: #414141;
+        padding: 20px;
+    }
+
+    svg{
+        width: 30px;
+        height: auto;
+        fill: rgb(218, 218, 218);
+        transition: fill 0.3s;
+    }
+
+    svg:hover {
+        fill: rgba(185, 28, 28, 1);
+    }
+
+    .info-header,.info-footer {
+        @include mixins.displayFlex($gap:0px);
+    }
+
+    .info-header {
+        margin-bottom: 15px;
+    }
+
+    .info-footer {
+        margin-top: 15px;
+    }
+
+    button {
+        background-color: #EF8421;
+        transition: background-color 0.4s;
+        font-family: Poppins;
+        font-size: 20px;
+        font-weight: 600;
+        color:white;
+        border:none;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #e0a21d;
+    }
+
+    h2 {
+        font-size: 20px;
+        color: white;
+        font-weight: 600;
+    }
+}

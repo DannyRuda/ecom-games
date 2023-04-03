@@ -1,0 +1,29 @@
+@use './../mixins.scss' as mixins;
+
+.info-details {
+    opacity: 0;
+    height: 0px;
+    transition: opacity 0.8s, height 0.4s;
+    overflow: hidden;
+    @include mixins.displayFlex($direction:column ,$gap: 5px);
+
+    hr {
+        width: 100%;
+        color: rgba(209, 209, 209, 0.5);
+        margin: 0px;
+        padding: 0px;
+    }
+    .info-line {
+        @include mixins.displayFlex($gap:0px);
+        width: 100%;
+        color: rgb(209, 209, 209);
+        font-family: Poppins;
+
+    }
+}
+
+.show {
+    opacity: 1;
+    
+    height: 58px;
+}

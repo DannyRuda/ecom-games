@@ -1,16 +1,18 @@
-import { useState } from 'react'
-import "./App.scss"
-
+import { useState } from "react";
+import "./App.scss";
+import GameCard from "./components/GameCard";
+import MetaRating from "./components/sub/MetaRating";
 interface Props {
   char?: string;
 }
 
-function App(props:Props) {
-  
-
+function App(props: Props) {
   return (
-    <h1>HELLLLLL YEEEWEEEE</h1>
-  )
+    <>
+      <GameCard />
+      <MetaRating />
+    </>
+  );
 }
 
-export default App
+export default App;

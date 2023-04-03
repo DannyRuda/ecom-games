@@ -1,0 +1,13 @@
+@use './../mixins.scss' as mixins;
+
+.meta-rating {
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    border: 2px solid greenyellow;
+    color: greenyellow;
+    font-size: 25px;
+    font-family: monospace;
+    font-weight: 500;
+    @include mixins.displayFlex($justify: center, $direction: column, $gap: 0px)
+}
