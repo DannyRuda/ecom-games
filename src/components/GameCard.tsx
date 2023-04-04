@@ -12,11 +12,13 @@ export default function GameCard(props: any) {
         setShowDetails(!showDetails);
     }
 
+    const classname = showDetails ? "info lift" : "info";
+
     return (
         <div className="gamecard" onMouseEnter={handleHover} onMouseLeave={handleHover}>
             <div className="img" style={{backgroundImage: `url(${cyberpunk})`}}></div>
             
-            <div className="info">
+            <div className={classname}>
                 <div className="info-header">
                     <h2>Dead Island 2</h2>
                     <LikeIcon />

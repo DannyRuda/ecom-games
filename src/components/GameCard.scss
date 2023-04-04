@@ -1,8 +1,14 @@
 @use './mixins.scss' as mixins;
 
+$card-width: 380px;
+$card-height: 337,6px;
+$img-height: 200px;
+$details-height: 58px;
+
 .gamecard {
     cursor: pointer;
     width:380px;
+    height:337.6px;
     border-radius: 15px;
     overflow: hidden;
     position: absolute;
@@ -16,24 +22,46 @@
     .img {
         background-position: center;
         background-size: 150%;
-        height:200px;
+        background-attachment: fixed;
+        height:$img-height;
         width:100%;
     }
 
     .info {
         background-color: #414141;
         padding: 20px;
+        position:absolute;
+        z-index: 2;
+        width: $card-width;
+        box-sizing: border-box;
+        transform: translateY($img-height);
+        transition: transform 0.4s;
+    }
+
+    .info.lift {
+        transform: translateY(calc($img-height - $details-height));
     }
 
     svg{
         width: 30px;
         height: auto;
-        fill: rgb(218, 218, 218);
-        transition: fill 0.3s;
+        stroke: rgb(218, 218, 218);
+        fill:rgba(185, 28, 28, 1);
+        fill-opacity: 0;
+        transition: stroke 0.3s, fill-opacity 0.3s;
     }
 
     svg:hover {
-        fill: rgba(185, 28, 28, 1);
+        stroke: rgba(185, 28, 28, 1);
+    }
+
+    svg:not(.added):active {
+        fill-opacity: 1;
+    }
+
+    svg.added {
+        fill-opacity: 1;
+        stroke: rgba(185, 28, 28, 1);
     }
 
     .info-header,.info-footer {
@@ -61,7 +89,7 @@
     }
 
     button:hover {
-        background-color: #e0a21d;
+        background-color: #2e74dd;
     }
 
     h2 {
