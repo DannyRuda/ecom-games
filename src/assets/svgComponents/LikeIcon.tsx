@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export default function LikeIcon() {
   const [added, setAdded] = useState(false);
-  const classname = added ? "added" : "";
+  const classname = added ? "like added" : "like";
 
   function handleClick() {
     setAdded(added => !added);

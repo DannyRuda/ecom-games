@@ -52,7 +52,7 @@ $details-space: calc($details-height + $details-margin);
         transform: translateY(calc($img-height - $details-space));
     }
 
-    svg{
+    .like{
         width: 30px;
         height: auto;
         stroke: rgb(218, 218, 218);
@@ -61,17 +61,28 @@ $details-space: calc($details-height + $details-margin);
         transition: stroke 0.3s, fill-opacity 0.3s;
     }
 
-    svg:hover {
+    .like:hover {
         stroke: rgba(185, 28, 28, 1);
     }
 
-    svg:not(.added):active {
-        fill-opacity: 1;
-    }
-
-    svg.added {
+    .like.added {
         fill-opacity: 1;
         stroke: rgba(185, 28, 28, 1);
+    }
+
+    .dropdown-icon {
+        fill: rgb(218, 218, 218);
+        width:30px;
+        height: 30px;
+        position: absolute;
+        left: 43%;
+        top:100%;
+        transform: translateY(-105px) rotate(180deg);
+        transition: transform 0.4s;
+    }
+
+    .dropdown-icon.rotate {
+        transform: translateY(-178px) rotate(0deg);
     }
 
     .info-header,.info-footer {

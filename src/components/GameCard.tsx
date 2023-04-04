@@ -4,14 +4,26 @@ import LikeIcon from "../assets/svgComponents/LikeIcon"
 import InfoDetails from "./sub/InfoDetails"
 import MetaRating from "./sub/MetaRating"
 import { useState } from "react"
+import {IoIosArrowDropdown} from 'react-icons/io'
+import {RiArrowDropDownLine} from 'react-icons/ri'
 export default function GameCard(props: any) {
 
     const [showDetails,setShowDetails] = useState(false);
     const [zoom,setZoom] = useState(false);
 
 
-    function handleDetails() {
-        setShowDetails(!showDetails);
+    function handleDetails(e) {
+        /*
+        if(e.type === "mouseenter") {
+            setShowDetails(true);
+        } else {
+            setShowDetails(false);
+        }
+        */
+    }
+
+    function handleDropdown() {
+        setShowDetails(showDetails => !showDetails);
     }
 
     function handleZoom(e:any) {
@@ -24,12 +36,13 @@ export default function GameCard(props: any) {
 
     const infoclass = showDetails ? "info lift" : "info";
     const cardclass = zoom ? "gamecard zoom" : "gamecard";
+    const dropdownclass = showDetails ? "dropdown-icon rotate" : "dropdown-icon";
 
     return (
-        <div className={cardclass} onMouseLeave={handleZoom} >
+        <div className={cardclass} onMouseLeave={(e)=>{handleZoom(e)}} >
             <div className="img" style={{backgroundImage: `url(${cyberpunk})`}} onMouseEnter={(e)=>{handleZoom(e)}} ></div>
-            
-            <div className={infoclass} onMouseEnter={handleDetails} onMouseLeave={handleDetails}>
+            <div className={infoclass} onMouseEnter={(e)=>{handleDetails(e)}} onMouseLeave={(e)=>{handleDetails(e)}}>
+                <RiArrowDropDownLine className={dropdownclass} onClick={handleDropdown} />
                 <div className="info-header">
                     <h2>Dead Island 2</h2>
                     <LikeIcon />
