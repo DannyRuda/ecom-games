@@ -7,18 +7,29 @@ import { useState } from "react"
 export default function GameCard(props: any) {
 
     const [showDetails,setShowDetails] = useState(false);
+    const [zoom,setZoom] = useState(false);
 
-    function handleHover() {
+
+    function handleDetails() {
         setShowDetails(!showDetails);
     }
 
-    const classname = showDetails ? "info lift" : "info";
+    function handleZoom(e:any) {
+        if(e.type === "mouseenter") {
+            setZoom(true);
+        } else {
+            setZoom(false);
+        }
+    }
+
+    const infoclass = showDetails ? "info lift" : "info";
+    const cardclass = zoom ? "gamecard zoom" : "gamecard";
 
     return (
-        <div className="gamecard" onMouseEnter={handleHover} onMouseLeave={handleHover}>
-            <div className="img" style={{backgroundImage: `url(${cyberpunk})`}}></div>
+        <div className={cardclass} onMouseLeave={handleZoom} >
+            <div className="img" style={{backgroundImage: `url(${cyberpunk})`}} onMouseEnter={(e)=>{handleZoom(e)}} ></div>
             
-            <div className={classname}>
+            <div className={infoclass} onMouseEnter={handleDetails} onMouseLeave={handleDetails}>
                 <div className="info-header">
                     <h2>Dead Island 2</h2>
                     <LikeIcon />

@@ -4,13 +4,19 @@ $card-width: 380px;
 $card-height: 337,6px;
 $img-height: 200px;
 $details-height: 58px;
+$details-margin: 15px;
+$details-space: calc($details-height + $details-margin);
+
+.gamecard.zoom {
+    transform:translate(-50%,-50%) scale(1.2);
+}
 
 .gamecard {
     cursor: pointer;
     width:380px;
     height:337.6px;
     border-radius: 15px;
-    overflow: hidden;
+    transition: transform 0.4s;
     position: absolute;
     left:50%;
     top: 50%;
@@ -25,7 +31,9 @@ $details-height: 58px;
         background-attachment: fixed;
         height:$img-height;
         width:100%;
-    }
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
+    }    
 
     .info {
         background-color: #414141;
@@ -36,10 +44,12 @@ $details-height: 58px;
         box-sizing: border-box;
         transform: translateY($img-height);
         transition: transform 0.4s;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
     }
 
     .info.lift {
-        transform: translateY(calc($img-height - $details-height));
+        transform: translateY(calc($img-height - $details-space));
     }
 
     svg{
@@ -73,7 +83,7 @@ $details-height: 58px;
     }
 
     .info-footer {
-        margin-top: 15px;
+        
     }
 
     button {
