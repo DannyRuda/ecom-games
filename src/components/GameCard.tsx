@@ -50,7 +50,7 @@ export default function GameCard(props: any) {
                 <InfoDetails show={showDetails} />
                 <div className="info-footer">
                     <MetaRating />
-                    <button>39,99€</button>
+                    <button className="CtA">39,99€</button>
                 </div>
             </div>
         </div>

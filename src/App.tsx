@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.scss";
 import GameCard from "./components/GameCard";
 import MetaRating from "./components/sub/MetaRating";
+import GameSuggestions from "./components/GameSuggestions";
 interface Props {
   char?: string;
 }
@@ -9,8 +10,15 @@ interface Props {
 function App(props: Props) {
   return (
     <>
-      <GameCard />
       <MetaRating />
+      <GameSuggestions>
+      <GameCard />
+      <GameCard />
+      <GameCard />
+      <GameCard />
+      <GameCard />
+      <GameCard />
+      </GameSuggestions>
     </>
   );
 }

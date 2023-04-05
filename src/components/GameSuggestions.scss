@@ -1,0 +1,42 @@
+@use "./mixins.scss" as mixins;
+@use "./variables.scss" as v;
+
+.game-suggestions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, v.$card-width);
+  grid-auto-rows: auto;
+  row-gap: v.$grid-gap;
+  column-gap: v.$grid-gap;
+  max-width: calc(v.$card-width * 4 + v.$grid-gap * 3);
+  justify-content: center;
+
+  width: 80%;
+  margin: 0px auto;
+
+  .header {
+    @include mixins.displayFlex($gap: 0px);
+    grid-column: 1 / -1;
+  }
+
+  h1 {
+    font-size: 25px;
+    color: white;
+    font-weight: 600;
+  }
+
+  button {
+    background-color: #5c5c5c;
+    transition: background-color 0.4s;
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #8b8b8b;
+  }
+}

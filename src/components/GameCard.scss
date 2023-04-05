@@ -1,14 +1,8 @@
 @use './mixins.scss' as mixins;
-
-$card-width: 380px;
-$card-height: 337,6px;
-$img-height: 200px;
-$details-height: 58px;
-$details-margin: 15px;
-$details-space: calc($details-height + $details-margin);
+@use './variables.scss' as v;
 
 .gamecard.zoom {
-    transform:translate(-50%,-50%) scale(1.2);
+    transform: scale(1.1);
 }
 
 .gamecard {
@@ -17,10 +11,7 @@ $details-space: calc($details-height + $details-margin);
     height:337.6px;
     border-radius: 15px;
     transition: transform 0.4s;
-    position: absolute;
-    left:50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
+    
     display: flex;
     flex-direction: column;
     font-family: Poppins;
@@ -28,8 +19,8 @@ $details-space: calc($details-height + $details-margin);
     .img {
         background-position: center;
         background-size: 150%;
-        background-attachment: fixed;
-        height:$img-height;
+        
+        height:v.$img-height;
         width:100%;
         border-top-right-radius: 15px;
         border-top-left-radius: 15px;
@@ -40,16 +31,16 @@ $details-space: calc($details-height + $details-margin);
         padding: 20px;
         position:absolute;
         z-index: 2;
-        width: $card-width;
+        width: v.$card-width;
         box-sizing: border-box;
-        transform: translateY($img-height);
+        transform: translateY(v.$img-height);
         transition: transform 0.4s;
         border-bottom-left-radius: 15px;
         border-bottom-right-radius: 15px;
     }
 
     .info.lift {
-        transform: translateY(calc($img-height - $details-space));
+        transform: translateY(calc(v.$img-height - v.$details-space));
     }
 
     .like{
@@ -97,7 +88,7 @@ $details-space: calc($details-height + $details-margin);
         
     }
 
-    button {
+    button.CtA {
         background-color: #EF8421;
         transition: background-color 0.4s;
         font-family: Poppins;
