@@ -1,5 +1,6 @@
-@use './mixins.scss' as mixins;
-@use './variables.scss' as v;
+@use './scssSources/mixins.scss' as mixins;
+@use './scssSources/variables.scss' as v;
+@use './scssSources/colors.scss' as color;
 
 .gamecard.zoom {
     transform: scale(1.1);
@@ -27,7 +28,7 @@
     }    
 
     .info {
-        background-color: #414141;
+        background-color: color.$component-grey;
         padding: 20px;
         position:absolute;
         z-index: 2;
@@ -46,25 +47,23 @@
     .like{
         width: 30px;
         height: auto;
-        stroke: rgb(218, 218, 218);
-        fill:rgba(185, 28, 28, 1);
+        stroke: color.$svg-white;
+        fill:color.$svg-red;
         fill-opacity: 0;
         transition: stroke 0.3s, fill-opacity 0.3s;
     }
 
     .like:hover {
-        stroke: rgba(185, 28, 28, 1);
+        stroke: color.$svg-red;
     }
 
     .like.added {
         fill-opacity: 1;
-        stroke: rgba(185, 28, 28, 1);
+        stroke: color.$svg-red;
     }
 
     .dropdown-icon {
-        fill: rgb(218, 218, 218);
-        width:30px;
-        height: 30px;
+        @include mixins.dropdownBasic;
         position: absolute;
         left: 43%;
         top:100%;
@@ -89,7 +88,7 @@
     }
 
     button.CtA {
-        background-color: #EF8421;
+        background-color: color.$orange;
         transition: background-color 0.4s;
         font-family: Poppins;
         font-size: 20px;

@@ -1,7 +1,28 @@
-@use './variables.scss' as  v;
-@use './mixins.scss' as mixins;
+@use './scssSources/variables.scss' as  v;
+@use './scssSources/mixins.scss' as mixins;
+@use './scssSources/colors.scss' as color;
 
 .dropdown-menu {
-    height: 20px;
-    background-color: grey;
+    margin: 0px auto;
+    width: 200px;
+    box-sizing: border-box;
+    height: 30px;
+    border-radius: 10px;
+    background-color: color.$component-grey;
+    @include mixins.displayFlex($gap: 30px); 
+    padding: 0px 20px;
+    color: white;
+    font-weight: 300;
+    outline: solid 2px color.$component-grey-h; 
+    transition: outline 0.3s;
+    
+    .dropdown-icon {
+        width: 40px;
+        height: 40px;
+        
+    }
+}
+
+.dropdown-menu:hover {
+    outline: solid 2px color.$orange; 
 }

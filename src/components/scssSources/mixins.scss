@@ -1,0 +1,15 @@
+@use './colors.scss' as color;
+
+@mixin displayFlex($direction: row, $justify: space-between, $gap) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: $justify;
+  gap: $gap;
+}
+
+@mixin dropdownBasic {
+  fill: color.$svg-white;
+  width: 30px;
+  height: 30px;
+}

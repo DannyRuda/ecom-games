@@ -1,8 +1,0 @@
-@mixin displayFlex($direction: row, $justify: space-between, $gap) {
-    display: flex;
-    flex-direction: $direction;
-    align-items: center;
-    justify-content: $justify;
-    gap: $gap;
-}
-

@@ -1,0 +1,31 @@
+@use './../scssSources/variables.scss' as  v;
+@use './../scssSources/mixins.scss' as mixins;
+@use './../scssSources/colors.scss' as color;
+
+.options {
+    width: v.$dropdown-width;
+    box-sizing: border-box;
+    padding: 5px 10px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(65, 65, 65,0.6);
+    position:absolute;
+    left: 400px;
+    top: 100px;
+    border-radius: 15px;
+
+   
+    p {
+        color:white;
+        padding: 5px 5px;
+        margin: 5px 0px;
+        background-color: none;
+        transition: background-color 0.3s;
+        font-family: Poppins;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    p:hover {
+        background-color: color.$orange;
+    }
+}

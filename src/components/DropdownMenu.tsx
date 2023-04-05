@@ -8,7 +8,7 @@ export default function DropdownMenu() {
     return (
         <div className='dropdown-menu'>
             <p>{sortString}</p>
-            <RiArrowDropDownLine />
+            <RiArrowDropDownLine className='dropdown-icon' />
         </div>
     )
 }

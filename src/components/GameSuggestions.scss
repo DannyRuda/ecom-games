@@ -1,5 +1,6 @@
-@use "./mixins.scss" as mixins;
-@use "./variables.scss" as v;
+@use "./scssSources/mixins.scss" as mixins;
+@use "./scssSources/variables.scss" as v;
+@use './scssSources/colors.scss' as color;
 
 .game-suggestions {
   display: grid;
@@ -25,7 +26,7 @@
   }
 
   button {
-    background-color: #5c5c5c;
+    background-color: color.$component-grey;
     transition: background-color 0.4s;
     font-family: Poppins;
     font-size: 20px;
@@ -37,6 +38,6 @@
   }
 
   button:hover {
-    background-color: #8b8b8b;
+    background-color: color.$component-grey-h;
   }
 }

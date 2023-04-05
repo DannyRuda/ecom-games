@@ -5,6 +5,7 @@ import MetaRating from "./components/sub/MetaRating";
 import GameSuggestions from "./components/GameSuggestions";
 import Logo from "./components/Logo";
 import DropdownMenu from "./components/DropdownMenu";
+import DropdownOptions from "./components/sub/DropdownOptions";
 interface Props {
   char?: string;
 }
@@ -22,6 +23,16 @@ function App(props: Props) {
         <GameCard />
       </GameSuggestions>
       <Logo />
+      <DropdownMenu />
+      <DropdownOptions />
+      <GameSuggestions>
+        <GameCard />
+        <GameCard />
+        <GameCard />
+        <GameCard />
+        <GameCard />
+        <GameCard />
+      </GameSuggestions>
     </>
   );
 }
