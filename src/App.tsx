@@ -4,6 +4,7 @@ import GameCard from "./components/GameCard";
 import MetaRating from "./components/sub/MetaRating";
 import GameSuggestions from "./components/GameSuggestions";
 import Logo from "./components/Logo";
+import DropdownMenu from "./components/DropdownMenu";
 interface Props {
   char?: string;
 }
