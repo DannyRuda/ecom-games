@@ -9,11 +9,12 @@
     backdrop-filter: blur(10px);
     background-color: rgba(65, 65, 65,0.6);
     position:absolute;
-    left: 400px;
-    top: 100px;
+    transform: translateY(-110px) scale(0);
+    z-index: 5;
     border-radius: 15px;
-
-   
+    transition: opacity 0.3s, transform 0.3s;
+    opacity: 0;
+    height: fit-content;
     p {
         color:white;
         padding: 5px 5px;
@@ -28,4 +29,9 @@
     p:hover {
         background-color: color.$orange;
     }
+}
+
+.options.show {
+    opacity: 1;
+    transform:translateY(10px) scale(1);
 }

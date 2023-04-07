@@ -1,14 +1,26 @@
-import './DropdownMenu.scss';
-import {RiArrowDropDownLine} from 'react-icons/ri'
+import "./DropdownMenu.scss";
+import { RiArrowDropDownLine } from "react-icons/ri";
+import DropdownOptions from "./sub/DropdownOptions";
+import { useState } from "react";
 
 export default function DropdownMenu() {
+  const [showOptions, setShowOptions] = useState(false);
 
-        const sortString = "Sort by: A-Z";
+  function handleClick() {
+    setShowOptions((showOptions) => !showOptions);
+  }
 
-    return (
-        <div className='dropdown-menu'>
-            <p>{sortString}</p>
-            <RiArrowDropDownLine className='dropdown-icon' />
-        </div>
-    )
+  const menuClass = showOptions ? 'dropdown-menu active' : "dropdown-menu";
+  const sortString = "Sort by: A-Z";
+  const iconClass = showOptions ? "dropdown-icon rotate" : "dropdown-icon";
+
+  return (
+    <div className="dropdown-container">
+      <div className={menuClass} onClick={handleClick}>
+        <p>{sortString}</p>
+        <RiArrowDropDownLine className={iconClass} />
+      </div>
+      <DropdownOptions show={showOptions}/>
+    </div>
+  );
 }

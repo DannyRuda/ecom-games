@@ -24,7 +24,6 @@ function App(props: Props) {
       </GameSuggestions>
       <Logo />
       <DropdownMenu />
-      <DropdownOptions />
       <GameSuggestions>
         <GameCard />
         <GameCard />

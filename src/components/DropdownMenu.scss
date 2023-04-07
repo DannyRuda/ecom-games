@@ -2,9 +2,13 @@
 @use './scssSources/mixins.scss' as mixins;
 @use './scssSources/colors.scss' as color;
 
-.dropdown-menu {
+
+.dropdown-container {
     margin: 0px auto;
-    width: 200px;
+    width:200px;
+}
+
+.dropdown-menu {
     box-sizing: border-box;
     height: 30px;
     border-radius: 10px;
@@ -15,14 +19,18 @@
     font-weight: 300;
     outline: solid 2px color.$component-grey-h; 
     transition: outline 0.3s;
-    
+    cursor: pointer;
     .dropdown-icon {
         width: 40px;
         height: 40px;
-        
+        transition: transform 0.3s;
+    }
+
+    .dropdown-icon.rotate {
+        transform: rotate(180deg);
     }
 }
 
-.dropdown-menu:hover {
+.dropdown-menu:hover, .dropdown-menu.active {
     outline: solid 2px color.$orange; 
 }
