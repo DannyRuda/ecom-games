@@ -5,13 +5,14 @@ import { useState } from "react";
 
 export default function DropdownMenu() {
   const [showOptions, setShowOptions] = useState(false);
+  const [value, setValue] = useState("A - Z");
 
   function handleClick() {
     setShowOptions((showOptions) => !showOptions);
   }
 
   const menuClass = showOptions ? 'dropdown-menu active' : "dropdown-menu";
-  const sortString = "Sort by: A-Z";
+  const sortString = `Sort by: \b \b ${value}`;
   const iconClass = showOptions ? "dropdown-icon rotate" : "dropdown-icon";
 
   return (
@@ -20,7 +21,7 @@ export default function DropdownMenu() {
         <p>{sortString}</p>
         <RiArrowDropDownLine className={iconClass} />
       </div>
-      <DropdownOptions show={showOptions}/>
+      <DropdownOptions show={showOptions} setValue={setValue} setShowOptions={setShowOptions} />
     </div>
   );
 }
